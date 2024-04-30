@@ -1,0 +1,75 @@
+.mainContainer{
+    display:flex;
+    flex-direction:column;
+    font-size: 20px;
+    text-align: center;
+    background: url('../carImage1.avif');
+    background-repeat: no-repeat;
+
+color: aqua;}
+
+.textContainer{
+    flex-direction:column;
+    display:flex;
+    text-align:center;
+    padding:25px;
+    margin:auto;
+}
+.textHeading{
+    font-size: 45px;
+}
+.textMain{
+    font-size: 20px;
+}
+.textPoints{
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.pointBox{
+    border-style: solid ;
+    border-color: white;
+    border-width: .5px;
+    border-radius: 20px;
+    height: 180px;
+    width: 250px;
+    margin: 5px;
+    padding:2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.pointBox:hover { 
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+ }
+
+.reviewContainer{
+    display: flex;
+    flex-direction: column;
+}
+.reviews{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;    
+}
+.reviewItem{
+    border-style: solid ;
+    border-color: aqua;
+    border-width: .5px;
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display:inline-block;
+    overflow: hidden;
+    font-size: 15px;
+    padding : 5px;
+}
+
+.moreReviews{
+    padding:5px;
+}

@@ -1,0 +1,38 @@
+/* Header.css */
+.header {
+    background-color: #333;
+    color: #fff;
+    height: 60px; /* Adjust height as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adjust padding as needed */
+    margin-bottom:auto;
+}
+
+.header h2 {
+    margin: 0;
+}
+a
+{ color: inherit;
+    text-decoration: none;
+} 
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+    padding: 40px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}

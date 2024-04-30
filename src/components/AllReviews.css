@@ -1,0 +1,52 @@
+body{
+  background: url('../carImage1.avif');
+  background-repeat: no-repeat;
+  background-position:0cqh;
+  background-color: black;
+}
+.reviewLine{
+  color: aqua;
+  text-align: center;
+}
+.review-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.review-container h2 {
+  color: aqua;
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.review-content {
+  color: aqua;
+  margin-bottom: 10px;
+}
+
+.review-rating {
+  font-weight: bold;
+}
+
+.review-stats {
+  color: aqua;
+  margin-top: 10px;
+}
+
+.review-stats p {
+  margin: 5px 0;
+}
+
+.review-stats p:first-child {
+  margin-top: 0;
+}
+
+.review-stats p:last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+}
