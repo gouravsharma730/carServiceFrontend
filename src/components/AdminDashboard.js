@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:4000/adminHome');
+      const response = await axios.get('https://car-service-backend-psi.vercel.app/adminHome');
       setPendingBookings(response.data.message);
     };
     fetchData();
@@ -25,7 +25,7 @@ const App = () => {
 
   const handleResponseChange = async (bookingId, newStatus) => {
     try {
-      const response = await axios.post('http://localhost:4000/bookingresponse', {
+      const response = await axios.post('https://car-service-backend-psi.vercel.app/bookingresponse', {
         bookingId,
         newStatus
       });

@@ -11,7 +11,7 @@ const ReviewPage = () => {
 
   const getReviews = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/reviews');
+      const response = await axios.get('https://car-service-backend-psi.vercel.app/reviews');
       setReviews(response.data.message);
     } catch (error) {
       console.log(error);

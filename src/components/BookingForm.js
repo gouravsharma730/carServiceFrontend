@@ -27,7 +27,7 @@ const BookingForm = () => {
     let token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWQzZWNhNDhjY2RhMjJmNGNkZDljNCIsInVzZXJOYW1lIjoiZ291cmF2IHNoYXJtYSIsImVtYWlsIjoiZ291cmF2c2hhcm1hNzMwQGdtYWlsLmNvbSIsImlhdCI6MTcxMzE5NzE0MSwiZXhwIjoxNzE1NzE3MTQxfQ.S2SmfWOVhp6gSnRs954d6kMeXRHq2YOQ6LTEpfAZ_5M";
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const sendData = await axios.post('http://localhost:4000/newBooking',bookingDetails);
+    const sendData = await axios.post('https://car-service-backend-psi.vercel.app/newBooking',bookingDetails);
     if(sendData) {
     setTimeout(function(){
         navigate('/home');

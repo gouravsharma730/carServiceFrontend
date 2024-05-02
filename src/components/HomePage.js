@@ -16,9 +16,9 @@ function App() {
   async function getUserProfile(){
     try{
      
-      let resForUserAPI = await axios.get('http://localhost:4000/home');
+      let resForUserAPI = await axios.get('https://car-service-backend-psi.vercel.app/home');
       SetUserProfile(resForUserAPI.data.message);
-      let resForBookingHistory= await axios.get('http://localhost:4000/bookingHistory');
+      let resForBookingHistory= await axios.get('https://car-service-backend-psi.vercel.app/bookingHistory');
       SetBookingHistory(resForBookingHistory.data.message);
 
       return;
@@ -49,7 +49,7 @@ function App() {
   async function handleSendComment(){
     try{
       console.log(comment,rating);
-      const response = await axios.post('http://localhost:4000/review',{comment,rating})
+      const response = await axios.post('https://car-service-backend-psi.vercel.app/review',{comment,rating})
       const message = response['data']['message'];
       alert(message);
       SetComment('');

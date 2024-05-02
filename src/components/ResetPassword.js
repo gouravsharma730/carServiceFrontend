@@ -28,7 +28,7 @@ function ResetPassword() {
       return SetError('Please fill in all fields.');
     }else {
       try {
-        const response = await axios.post('http://localhost:4000/resetpassword',{password});
+        const response = await axios.post('https://car-service-backend-psi.vercel.app/resetpassword',{password});
         let token = response.data["token"];
         localStorage.setItem('jwtToken', token);
         if(response.status===404) SetError('User Not Found!');

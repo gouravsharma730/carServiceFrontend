@@ -27,7 +27,7 @@ function SignUp() {
     try{if (!formData.password.trim())
       return setErrorMessage("Please enter password");
     if (!formData.email.trim()) return setErrorMessage("Please enter email");
-      let response = await axios.post('http://localhost:4000/signup',formData);
+      let response = await axios.post('https://car-service-backend-psi.vercel.app/signup',formData);
       let token = response.data["token"];
       localStorage.setItem('jwtToken', token);
       return navigate('/login');
