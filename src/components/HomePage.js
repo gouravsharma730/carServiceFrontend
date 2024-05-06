@@ -77,7 +77,9 @@ function App() {
 
   function displayBookingHistory() {
     if (bookingHistory.length === 0) {
-      return <div>Loading...</div>;
+      return <div><button>
+      <a href="/newbooking">Make New Booking</a>
+    </button></div>;
     }
     return (
       <div className={styles.tableContainer}>
@@ -121,11 +123,9 @@ function App() {
   }
 
   useEffect(() => {
-    // Check if any booking has a service status of "completed"
     const hasCompletedBooking = bookingHistory.some(
       (booking) => booking.serviceStatus === "Completed"
     );
-    // Enable/disable "Post Review" button based on booking status
     SetCheckServiceStatus(hasCompletedBooking);
   }, [bookingHistory]);
 
