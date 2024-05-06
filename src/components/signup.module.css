@@ -1,26 +1,32 @@
 @media only screen and (max-width: 600px) {
-  .container {
-      flex-direction: column;
-      height: auto; 
-  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: auto;
+    color: aqua;
+    }
 
   .leftDiv {
+    /* display: flex; */
       max-width: 100%;
-      font-size: 30px; /* Adjust font size */
+      font-size: 30px;
+      text-align: center;
   }
 
   .rightDiv {
       max-width: 100%;
-      align-items: center; /* Center items */
+      align-items: center;
   }
 
   .inputAndLabel {
-      flex-direction: column; /* Stack input and label vertically */
-      padding: 5px; /* Reduce padding */
+      flex-direction: column; 
+      padding: 5px; 
   }
 
   .btn {
-      width: 100%; /* Take full width */
+      width: 100%; 
   }
 }
 

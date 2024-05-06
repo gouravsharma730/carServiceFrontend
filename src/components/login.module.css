@@ -1,11 +1,15 @@
 @media only screen and (max-width: 600px) {
   .centered {
-    flex-direction: column; /* Stack items vertically */
-    height: auto; /* Reset height */
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: auto;
+    color: aqua;
   }
 
   .formDiv {
-    width: 80%; /* Take up more width */
+    width: 100%;
   }.centered {
     height: 87vh;
     display: flex;
@@ -34,13 +38,6 @@
   }
   .inputHolder {
     width: 100%;
-  }
-
-  .row {
-    height: min-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   .btn {
       width: 100%;

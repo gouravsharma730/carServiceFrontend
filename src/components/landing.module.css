@@ -1,17 +1,45 @@
 @media only screen and (max-width: 600px) {
     .mainContainer{
+        padding:10px;
+        font-size: 18px;
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        color: aqua;
         font-size: 16px;
+    }
+    .textContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        text-align:center;
+        padding:25px;
+        margin:auto;
     }
 
     .textHeading{
         font-size: 30px;
     }
-
-    .pointBox{
-        height: 120px;
-        width: 200px;
+    .textPoints{
+        margin-top: 30px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
+    .pointBox{
+        text-align: center;
+        border-style: solid ;
+        border-color: white;
+        border-width: .5px;
+        border-radius: 20px;
+        height: 150px;
+        width: 225px;
+        margin: 5px;
+        padding:2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
     .reviewItem{
         height: 200px;
         width: 200px;
@@ -25,9 +53,9 @@
         font-size: 18px;
         display:flex;
         flex-direction:column;
-        font-size: 20px;
         text-align: center;
         color: aqua;
+        font-size: 20px;
     }
     .textContainer{
         display:flex;
