@@ -61,7 +61,7 @@ function App() {
   async function handleSendComment() {
     try {
       console.log(comment, rating);
-      const response = await axios.post("https://car-service-backend-psi.vercel.app/reviews", {
+      const response = await axios.post("https://car-service-backend-psi.vercel.app/review", {
         comment,
         rating,
       });
