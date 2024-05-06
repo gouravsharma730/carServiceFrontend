@@ -24,7 +24,7 @@ function App() {
       );
       SetBookingHistory(resForBookingHistory.data.message);
     } catch (err) {
-      console.log("error", err);
+      return ("error", err);
     }
   }
 
@@ -60,7 +60,6 @@ function App() {
 
   async function handleSendComment() {
     try {
-      console.log(comment, rating);
       const response = await axios.post("https://car-service-backend-psi.vercel.app/review", {
         comment,
         rating,

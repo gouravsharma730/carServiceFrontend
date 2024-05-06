@@ -29,7 +29,6 @@ const App = () => {
         bookingId,
         newStatus
       });
-      console.log(response.data);
       alert('One booking confirmed!');
       navigate('/AdminDashboard');
     } catch (error) {

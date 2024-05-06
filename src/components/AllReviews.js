@@ -14,7 +14,7 @@ const ReviewPage = () => {
       const response = await axios.get('https://car-service-backend-psi.vercel.app/reviews');
       setReviews(response.data.message);
     } catch (error) {
-      console.log(error);
+      return(error);
     }
   };
 
