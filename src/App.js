@@ -7,11 +7,9 @@ import Landing from "./components/Landing";
 import Signup from "./components/signup";
 import Login from "./components/login";
 import Home from "./components/HomePage";
-import ProfileEdit from "./components/ProfileEdit";
-import Booking from "./components/Booking";
 import Review from "./components/AllReviews";
 import AdminDashboard from"./components/AdminDashboard";
-import Header from './components/Header';
+import Header from './components/Header'; 
 import Footer from './components/Footer';
 import ForgetPassword from './components/ForgetPassword';
 import ResetPassword from "./components/ResetPassword";
@@ -40,10 +38,7 @@ const App =()=>{
         <Route path ="/signup" element={<Signup/>} />
         <Route path ="/login" element={<Login/>} />
         <Route path ="/home" element={<Home/>} />
-        <Route path ="/profile/edit" element={<ProfileEdit/>} />
-        <Route path ="/booking" element={<Booking/>} />
         <Route path ="/reviews" element={<Review/>} />
-        {/* <Route path ="/admin" element={<AdminLogin/>} /> */}
         <Route path ="/AdminDashboard" element={<AdminDashboard/>} />
         <Route path ="/forgetpassword" element={<ForgetPassword/>}/>
         <Route path ="/resetpassword" element={<ResetPassword/>}/>

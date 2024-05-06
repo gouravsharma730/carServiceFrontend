@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./ResetPassword.css";
+import styles from './ResetPassword.module.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +42,7 @@ function ResetPassword() {
     return;
   }
   return (
-    <div className="container">
+    <div className={"styles.container"}>
       <h2>Reset Password</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>

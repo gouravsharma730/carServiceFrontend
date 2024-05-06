@@ -8,41 +8,41 @@ body{
   color: aqua;
   text-align: center;
 }
-.review-container {
+.reviewContainer {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
 }
 
-.review-container h2 {
+.reviewContainer h2 {
   color: aqua;
   margin-top: 0;
   font-size: 1.2rem;
 }
 
-.review-content {
+.reviewContent {
   color: aqua;
   margin-bottom: 10px;
 }
 
-.review-rating {
+.reviewRating {
   font-weight: bold;
 }
 
-.review-stats {
+.reviewStats {
   color: aqua;
   margin-top: 10px;
 }
 
-.review-stats p {
+.reviewStats p {
   margin: 5px 0;
 }
 
-.review-stats p:first-child {
+.reviewStats p:first-child {
   margin-top: 0;
 }
 
-.review-stats p:last-child {
+.reviewStats p:last-child {
   margin-bottom: 0;
 }
 

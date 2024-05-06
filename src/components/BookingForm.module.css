@@ -1,4 +1,4 @@
-.booking-form-container {
+.bookingFormContainer {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -7,28 +7,28 @@
   color: white;
 }
 
-.booking-form-container h2 {
+.bookingFormContainer h2 {
   margin-bottom: 20px;
 }
 
-.booking-form-container form {
+.bookingFormContainer form {
   display: flex;
   flex-direction: column;
 }
 
-.booking-form-container label {
+.bookingFormContainer label {
   margin-bottom: 10px;
 }
 
-.booking-form-container input[type='text'],
-.booking-form-container input[type='date'] {
+.bookingFormContainer input[type='text'],
+.bookingFormContainer input[type='date'] {
   padding: 8px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.booking-form-container button {
+.bookingFormContainer button {
   padding: 10px;
   margin-top: 20px;
   background-color: #007bff;
@@ -38,14 +38,14 @@
   cursor: pointer;
 }
 
-.booking-form-container button:hover {
+.bookingFormContainer button:hover {
   background-color: #0056b3;
 }
 
 
 /* Add these styles to your BookingForm.css file */
 
-.booking-form-container select {
+.bookingFormContainer select {
   padding: 8px;
   margin-top: 5px;
   border: 1px solid #ccc;
@@ -54,11 +54,11 @@
 }
 
 /* Style the dropdown arrow */
-.booking-form-container select::-ms-expand {
+.bookingFormContainer select::-ms-expand {
   display: none;
 }
 
-.booking-form-container select {
+.bookingFormContainer select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

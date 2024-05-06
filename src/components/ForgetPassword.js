@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ForgetPassword.css";
+import styles from './ForgetPassword.module.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -38,23 +38,23 @@ function ForgetPassword() {
   }
   return (
     <div>
-      <div className="centered-form">
-        <div className="form-container">
+      <div className={styles.centeredForm}>
+        <div className={styles.formContainer}>
           <p>Please enter your registered email address.</p>
           <form onSubmit={handleSubmit}>
-            <div className="inputAndButton">
+            <div className={styles.inputAndButton}>
               <input
                 type="email"
                 placeholder="Enter you email here"
                 value={email}
                 onChange={handleIputChange}
               />
-              <button type="submit" className="btn btn-primary btn-block mb-4">
+              <button type="submit" className={'styles.btn btn-primary btn-block mb-4'}>
                 Submit
               </button>
             </div>
           </form>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {errorMessage && <p className={"styles.error-message"}>{errorMessage}</p>}
         </div>
       </div>
     </div>

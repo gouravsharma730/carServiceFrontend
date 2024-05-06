@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AdminDashboard.css';
+import styles from './AdminDashboard.module.css';
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
@@ -38,7 +38,7 @@ const App = () => {
   };
 
   return (
-      <div className="box">
+      <div className={styles.box}>
         <h2>Awaiting Confirmation</h2>
         <table>
           <thead>

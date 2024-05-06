@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./landing.css";
+import styles from './landing.module.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -40,51 +40,50 @@ const LandingPage = () => {
   }
   return (
     <>
-      <div className="mainContainer">
-        <div className="textContainer">
-          <div className="textHeading">Welcome to SpeedyShine.</div> <br />
-          <div className="textMain">
+      <div className={styles.mainContainer}>
+        <div className={styles.textContainer}>
+          <div className={styles.textHeading}>Welcome to SpeedyShine.</div> <br />
+          <div className={styles.textMain}>
             Your one-stop solution for all your car service needs! With
             SpeedyShine, taking care of your vehicle has never been easier.
             Whether it's a quick wash, a detailed interior cleaning, or a
-            full-service maintenance check, we've got you covered. <br/> <br/>Why choose
+            full-service maintenance check, we've got you covered. <br/>
+            <div>
+            Discover the ease and satisfaction of using SpeedyShine. Book now
+            and experience the difference! <Link to="/signup"><button> Sign up</button></Link>
+            </div> <br/>Why choose
             us?
           </div>
-          <div className="textPoints">
+          
+          <div className={styles.textPoints}>
             <br />
-            <div className="pointBox">
-              <div className="points"><strong><br />Convenience:</strong><br /></div> <div>Book your service anytime, anywhere,
+            <div className={styles.pointBox}>
+              <div className={styles.points}><strong><br />Convenience:</strong><br /></div> <div>Book your service anytime, anywhere,
               right from your smartphone.</div>
             </div>
-            <br />
-            <div className="pointBox">
-            <div className="points"><strong><br />Quality:</strong></div><div>Our team of experienced professionals
+            <div className={styles.pointBox}>
+            <div className={styles.points}><strong><br />Quality:</strong></div><div>Our team of experienced professionals
               ensures top-notch service every time.</div>
             </div>
-            <br />
-            <div className="pointBox">
-            <div className="points"><strong><br />Reliability:</strong><br /></div> <div>Trust in our commitment to
+            <div className={styles.pointBox}>
+            <div className={styles.points}><strong><br />Reliability:</strong><br /></div> <div>Trust in our commitment to
               punctuality and efficiency.</div>
             </div>
-            <br />
-            <div className="pointBox">
-            <div className="points"><strong><br />Customization:</strong><br /></div> <div>Tailor services to fit your
+            <div className={styles.pointBox}>
+            <div className={styles.points}><strong><br />Customization:</strong><br /></div> <div>Tailor services to fit your
               schedule and budget.</div>
             </div>
-            <br />
-            <div className="pointBox">
+            <div className={styles.pointBox}>
             <br /><strong>Safety:<br /> </strong> We prioritize the safety and well-being
               of your vehicle.
             </div>{" "}
           </div>
-            <br />
-            Discover the ease and satisfaction of using SpeedyShine. Book now
-            and experience the difference!
+            
         </div>
-        <div className="reviewContainer">
-            <div className='reviewHeading'><strong>Reviews</strong></div>
-            <div className='reviews'>{renderRandomReview()}</div>
-            <div className ="moreReviews"><Link to="/reviews"><button>See more reviews</button></Link> </div>
+        <div className={styles.reviewContainer}>
+            <div className={styles.reviewHeading}><strong>Reviews</strong></div>
+            <div className={styles.reviews}>{renderRandomReview()}</div>
+            <div className ={styles.moreReviews}><Link to="/reviews"><button>See more reviews</button></Link> </div>
         </div>
       </div>
     </>

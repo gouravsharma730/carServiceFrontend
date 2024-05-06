@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
+import styles from './Header.module.css';
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,21 +15,18 @@ const Header = () => {
     },[isLoggedIn]);
 
     return (
-        <header className="header">
-            <h2><a href="/">SpeedyShine</a></h2>
+        <header className={styles.header}>
+            <div>
+                <h2><a href="/">SpeedyShine</a></h2>
+            </div>
             <nav>
-                <ul className="nav-links">
+                <ul className={styles.navLinks}>
                     {isLoggedIn ? (
-                        <>
+                        <div>
                             <li><Link to="/home">Profile</Link></li>
                             <li><Link to="/login" onClick={handleLogout}>Logout</Link></li>
-                        </>
-                    ) : (
-                        <>
-                            <li><Link to="/login">Login</Link></li>
-                            <li><Link to="/signup">Sign Up</Link></li>
-                        </>
-                    )}
+                        </div>
+                    ):''}
                 </ul>
             </nav>
         </header>
