@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 const App = () => {
   const navigate = useNavigate();
   const [pendingBookings, setPendingBookings] = useState([]);
+  const [totalBookings, setTotalBookings] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
+      // const response = await axios.get('http://localhost:4000/adminHome');
       const response = await axios.get('https://car-service-backend-psi.vercel.app/adminHome');
-      setPendingBookings(response.data.message);
+      setPendingBookings(response.data.message.pendingBookings);
+      setTotalBookings(response.data.message.totalBookings);
     };
     fetchData();
   }, []);
@@ -25,7 +28,8 @@ const App = () => {
 
   const handleResponseChange = async (bookingId, newStatus) => {
     try {
-      const response = await axios.post('https://car-service-backend-psi.vercel.app/bookingresponse', {
+      // const response = await axios.post('http://localhost:4000/bookingresponse', {
+        const response = await axios.post('https://car-service-backend-psi.vercel.app/bookingresponse', {
         bookingId,
         newStatus
       });
@@ -37,6 +41,7 @@ const App = () => {
   };
 
   return (
+    <>
       <div className={styles.box}>
         <h2>Awaiting Confirmation</h2>
         <table>
@@ -65,8 +70,10 @@ const App = () => {
                 <td>
                   <select onChange={(e) => handleResponseChange(booking._id, e.target.value)}>
                     <option value="">Choose Service Status</option>
-                    <option value="accepted">Accepted</option>
-                    <option value="rejected">Rejected</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="On hold">On hold</option>
+                    <option value="Completed">Completed</option>
                   </select>
                 </td>
               </tr>
@@ -74,6 +81,32 @@ const App = () => {
           </tbody>
         </table>
       </div>
+      <div className={styles.box}>
+        <h2> All bookings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Car Number</th>
+              <th>Address</th>
+              <th>Pick-up Date</th>
+              <th>Service type</th>
+              <th>Response to Service Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {totalBookings.map(booking => (
+              <tr key={booking._id}>
+                <td>{booking.carDetails.carNumber}</td>
+                <td>{booking.address}</td>
+                <td>{booking.dateOfPickUp.slice(0, 10)}</td>
+                <td>{booking.carDetails.serviceType}</td>
+                <td>{booking.serviceStatus}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+            </>
   );
 };
 

@@ -155,8 +155,8 @@
 .reviews{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-top: 30px;    
+    justify-content: space-around;
+    margin-top: 30px;
 }
 .reviewItem{
     border-style: solid ;
@@ -171,6 +171,9 @@
     overflow: hidden;
     font-size: 15px;
     padding : 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .moreReviews{

@@ -12,8 +12,7 @@ const LandingPage = () => {
   },[]);
   const handleReview = async()=>{
     try{
-      let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDE1NmVkY2ZhYzM1MTQyZDM1OTg0MyIsImlhdCI6MTcxMTM2Mzk2MiwiZXhwIjoxNzEzODgzOTYyfQ.meokuuJDTZOGhNygg745Y3ku0xfke2TFT51ViDwCNWQ';
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      // let response = await axios.get('http://localhost:4000/reviews');
       let response = await axios.get('https://car-service-backend-psi.vercel.app/reviews');
       SetReviews(response.data.message);
       return;
@@ -28,7 +27,7 @@ const LandingPage = () => {
   function renderRandomReview(){
     const randomReview = selectRandomReviews();
     return randomReview.map((review,index)=>(
-      <div key={index} className='reviewItem'>
+      <div key={index} className={styles.reviewItem}>
       <div>
         <br/>{review.content}
       </div>
