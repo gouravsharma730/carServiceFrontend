@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Frontend for User Authentication and Booking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the React-based frontend for the User Authentication and Booking System. The frontend provides user-friendly interfaces for authentication, profile management, booking services, and admin functionalities. It integrates with the backend using Axios for API requests.
 
-## Available Scripts
+---
+
+## Features
+
+- **Authentication**: Sign up, log in, and manage sessions with JWT tokens stored in `localStorage`.
+- **Booking System**: Interface for users to book services and view details.
+- **Review System**: Users can view and interact with reviews.
+- **Admin Dashboard**: Admin interface for managing bookings and user data.
+- **Responsive Design**: Header, Footer, and main components are styled for usability.
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (for dependency management)
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gouravsharma730/carServiceFrontend.git
+   cd carServiceFrontend
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables:
+
+Create a .env file in the root directory.
+
+4. Start the application:
+   ```bash
+   npm start
+   ```
+
+##Project Structure##
+
+```bash
+├── public/                 # Public files
+├── src/
+│   ├── components/         # React components for various pages
+│   │   ├── Landing.js      # Landing page
+│   │   ├── Signup.js       # Signup page
+│   │   ├── Login.js        # Login page
+│   │   ├── HomePage.js     # Home page
+│   │   ├── AllReviews.js   # Reviews page
+│   │   ├── AdminDashboard.js # Admin dashboard
+│   │   ├── ForgetPassword.js # Forget password page
+│   │   ├── ResetPassword.js  # Reset password page
+│   │   ├── BookingForm.js  # Booking form
+│   │   ├── Header.js       # Header component
+│   │   └── Footer.js       # Footer component
+│   ├── App.js              # Main application file
+│   └── index.js            # Entry point
+├── .env                    # Environment variables
+├── package.json            # Project metadata and dependencies
+└── README.md               # Project documentation
+```
+
+##Key Functionalities##
+
+**1. Axios Configuration:**
+
+Axios interceptors are configured to include JWT tokens in headers for API requests:
+```bash
+axios.interceptors.request.use(config => {
+  const token = localStorage.getItem('jwtToken');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+```
+
+**2. Routing:**
+
+The app uses react-router-dom for navigation between pages:
+/: Landing page
+/signup: Sign-up form
+/login: Login form
+/home: User home page
+/reviews: View all reviews
+/AdminDashboard: Admin dashboard
+/forgetpassword: Forgot password page
+/resetpassword: Reset password page
+/newBooking: Booking form
+
+**3. Components:**
+
+Header: Persistent navigation bar.
+Footer: Footer for the application.
+Landing, Signup, Login, etc.: Pages corresponding to routes
+
+##Available Scripts##
 
 In the project directory, you can run:
 
-### `npm start`
+npm start: Runs the app in the development mode at http://localhost:3000.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##Notes##
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Ensure the backend server is running at the specified REACT_APP_BACKEND_URL for API integration.
+* For production, update the REACT_APP_BACKEND_URL in the .env file to match the live backend URL.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
