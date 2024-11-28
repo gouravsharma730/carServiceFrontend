@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./ResetPassword.css";
+import styles from './ResetPassword.module.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +28,7 @@ function ResetPassword() {
       return SetError('Please fill in all fields.');
     }else {
       try {
-        const response = await axios.post('http://localhost:4000/resetpassword',{password});
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND}/resetpassword`,{password});
         let token = response.data["token"];
         localStorage.setItem('jwtToken', token);
         if(response.status===404) SetError('User Not Found!');
@@ -42,7 +42,7 @@ function ResetPassword() {
     return;
   }
   return (
-    <div className="container">
+    <div className={"styles.container"}>
       <h2>Reset Password</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>

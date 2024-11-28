@@ -1,0 +1,184 @@
+@media only screen and (min-width: 901px) {
+.mainContainer{
+    display:flex;
+    flex-direction:column;
+    min-height: 86vh;
+    font-size: 20px;
+    text-align: center;
+    background-color: #dae3ec;
+    color: black;
+}
+
+.textContainer{
+    display:flex;
+    flex-direction:column;
+    text-align:center; 
+}
+.textHeading{
+    font-size: 45px;
+}
+.textMain{
+    font-size: 20px;
+}
+.textPoints{
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.pointBox{
+    border-style: solid ;
+    border-color: white;
+    border-width: .5px;
+    border-radius: 20px;
+    height: 180px;
+    width: 250px;
+    margin: 5px;
+    padding:2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.pointBox:hover { 
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+ }
+
+.reviewContainer{
+    display: flex;
+    flex-direction: column;
+}
+.reviews{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.reviewItem{
+    border-style: solid ;
+    border-color: aqua;
+    border-width: .5px;
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display:inline-block;
+    overflow: hidden;
+    font-size: 15px;
+    padding : 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.moreReviews{
+    padding:5px;
+}
+
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .mainContainer{
+        padding:10px;
+        font-size: 18px;
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        font-size: 20px;
+        background-color: #dae3ec;
+        color: black;
+    }
+    .textContainer{
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+        padding:25px;
+        margin:auto;
+    }
+    .textHeading{
+        font-size: 35px;
+    }
+    .textMain{
+        font-size: 20px;
+    }
+    .textPoints{
+        margin-top: 30px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pointBox{
+        border-style: solid ;
+    border-color: white;
+    border-width: .5px;
+    border-radius: 20px;
+        height: 150px;
+        width: 225px;
+        margin: 5px;
+        padding:2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .reviewItem{
+        height: 250px;
+        width: 250px;
+    }
+    .pointBox:hover { 
+        transform: scale(1.1);
+        background-color: white;
+        color: black;
+     }
+}
+@media only screen and (max-width: 600px) {
+
+    .mainContainer{
+        background-color: #dae3ec;
+        color: black;
+        padding:10px;
+        font-size: 18px;
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        /* color:black; */
+        font-size: 16px;
+    }
+    .textContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        text-align:center;
+        padding:25px;
+        margin:auto;
+    }
+
+    .textHeading{
+        font-size: 30px;
+    }
+    .textPoints{
+        margin-top: 30px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pointBox{
+        text-align: center;
+        border-style: solid ;
+        border-color: white;
+        border-width: .5px;
+        border-radius: 20px;
+        height: 150px;
+        width: 225px;
+        margin: 5px;
+        padding:2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .reviewItem{
+        height: 200px;
+        width: 200px;
+    }
+}

@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AdminDashboard.css';
+import styles from './AdminDashboard.module.css';
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
   const navigate = useNavigate();
   const [pendingBookings, setPendingBookings] = useState([]);
+  const [totalBookings, setTotalBookings] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:4000/adminHome');
-      setPendingBookings(response.data.message);
+      const response = await axios.get(process.env.backend);
+      setPendingBookings(response.data.message.pendingBookings);
+      setTotalBookings(response.data.message.totalBookings);
     };
     fetchData();
   }, []);
 
   const handleDropDateChange = (bookingId, dropDate) => {
-    // Update the local state with the new drop date
     const updatedBookings = pendingBookings.map(booking =>
       booking._id === bookingId ? { ...booking, dropDate } : booking
     );
@@ -24,12 +25,10 @@ const App = () => {
   };
 
   const handleResponseChange = async (bookingId, newStatus) => {
-    try {
-      const response = await axios.post('http://localhost:4000/bookingresponse', {
+    try {const response = await axios.post(`${process.env.REACT_APP_BACKEND}/adminHome`, {
         bookingId,
         newStatus
       });
-      console.log(response.data);
       alert('One booking confirmed!');
       navigate('/AdminDashboard');
     } catch (error) {
@@ -38,7 +37,8 @@ const App = () => {
   };
 
   return (
-      <div className="box">
+    <>
+      <div className={styles.box}>
         <h2>Awaiting Confirmation</h2>
         <table>
           <thead>
@@ -66,8 +66,10 @@ const App = () => {
                 <td>
                   <select onChange={(e) => handleResponseChange(booking._id, e.target.value)}>
                     <option value="">Choose Service Status</option>
-                    <option value="accepted">Accepted</option>
-                    <option value="rejected">Rejected</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="On hold">On hold</option>
+                    <option value="Completed">Completed</option>
                   </select>
                 </td>
               </tr>
@@ -75,6 +77,32 @@ const App = () => {
           </tbody>
         </table>
       </div>
+      <div className={styles.box}>
+        <h2> All bookings</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Car Number</th>
+              <th>Address</th>
+              <th>Pick-up Date</th>
+              <th>Service type</th>
+              <th>Response to Service Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {totalBookings.map(booking => (
+              <tr key={booking._id}>
+                <td>{booking.carDetails.carNumber}</td>
+                <td>{booking.address}</td>
+                <td>{booking.dateOfPickUp.slice(0, 10)}</td>
+                <td>{booking.carDetails.serviceType}</td>
+                <td>{booking.serviceStatus}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+            </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./login.css";
+import styles from "./login.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -23,21 +23,20 @@ function Login() {
       return setErrorMessage("Please enter password");
     if (!formData.email.trim()) return setErrorMessage("Please enter email");
     try {
-      const response = await axios.post(
-        "http://localhost:4000/login",
-        formData,{
-          withCredentials: true
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND}/login`,formData,
+        {
+          withCredentials: true,
         }
       );
       let token = response.data["token"];
-      localStorage.setItem('jwtToken', token);
+      localStorage.setItem("jwtToken", token);
       let res = response.data["message"];
       if (res === "User not found.") setErrorMessage("User not found.");
       else if (res === "Incorrect password")
         setErrorMessage("Incorrect Username or password");
       else {
-        const profileCheck = response.data['message'][0]['userName'];
-        if(profileCheck==='Admin') window.location.href = "/AdminDashboard";
+        const profileCheck = response.data["message"][0]["userName"];
+        if (profileCheck === "Admin") window.location.href = "/AdminDashboard";
         else window.location.href = "/home";
       }
     } catch (err) {
@@ -46,36 +45,32 @@ function Login() {
   };
 
   return (
-    <div className="centered-form">
-      <div className="form-container">
+    <div className={styles.centered}>
+      <div className={styles.formDiv}>
         <form onSubmit={handleSubmit}>
-          <div className="form-outline mb-4">
-            <label className="form-label" htmlFor="form2Example1">
-              Email address
-            </label>
+          <div className={styles.formOutline}>
             <input
+              placeholder="Email address"
               type="email"
               id="form2Example1"
-              className="form-control"
+              className={styles.inputHolder}
               name="email"
               value={formData.email}
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-outline mb-4">
-            <label className="form-label" htmlFor="form2Example2">
-              Password
-            </label>
-            <div className ="passwordInput">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="form2Example2"
-              className="form-control"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              />
-            <span
+          <div className={styles.formOutline}>
+            <div className={styles.passwordInput}>
+              <input
+                placeholder="Password"
+                type={showPassword ? "text" : "password"}
+                id="form2Example2"
+                className={styles.inputHolder}
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+              /> &nbsp; 
+              <span
                 onClick={() => setShowPassword(!showPassword)}
                 style={{ cursor: "pointer" }}
               >
@@ -84,40 +79,34 @@ function Login() {
                   size="lg"
                 />
               </span>
-              </div>
+            </div>
           </div>
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <div className="row mb-4">
-            <div className="col d-flex justify-content-center">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="form2Example31"
-                  defaultChecked
-                />
-                <label className="form-check-label" htmlFor="form2Example31">
-                  {" "}
-                  Remember me
-                </label>
-              </div>
+          {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+          <div className={styles.row}>
+            <div className={styles.formCheck}>
+              <label className={styles.formCheck} htmlFor="form2Example31">
+                {" "}
+                Remember&nbsp;me
+              </label>
+              <input
+                type="checkbox"
+                value=""
+                id="form2Example31"
+                defaultChecked
+              />
             </div>
 
-            <div className="col">
+            <div className={"styles.col"}>
               <a href="/ForgetPassword">Forgot password?</a>
             </div>
           </div>
-          <button type="submit" className="btn btn-primary btn-block mb-4">
+          <button type="submit" className={styles.btn}>
             Sign in
           </button>
-          <div className="text-center">
+          <div className={styles.textCenter}>
             <p>
               Not a member?{" "}
-              <button
-                type="button"
-                className="btn btn-link btn-floating mx-2 my-2 "
-              >
+              <button type="button" className={styles.btn}>
                 {" "}
                 <a href="/signup">Register</a>
               </button>

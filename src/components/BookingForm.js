@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './BookingForm.css';
+import styles from './BookingForm.module.css';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+
 
 
 const BookingForm = () => {
@@ -24,10 +25,7 @@ const BookingForm = () => {
       dateOfPickUp,
     };
     bookingDetails.bookingTime = new Date().toLocaleDateString();
-    let token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWQzZWNhNDhjY2RhMjJmNGNkZDljNCIsInVzZXJOYW1lIjoiZ291cmF2IHNoYXJtYSIsImVtYWlsIjoiZ291cmF2c2hhcm1hNzMwQGdtYWlsLmNvbSIsImlhdCI6MTcxMzE5NzE0MSwiZXhwIjoxNzE1NzE3MTQxfQ.S2SmfWOVhp6gSnRs954d6kMeXRHq2YOQ6LTEpfAZ_5M";
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const sendData = await axios.post('http://localhost:4000/newBooking',bookingDetails);
+    const sendData = await axios.post(`${process.env.REACT_APP_BACKEND}/newBooking`);
     if(sendData) {
     setTimeout(function(){
         navigate('/home');
@@ -40,23 +38,13 @@ alert("We've received your request and are in the process of scheduling your app
   };
 
   return (
-    <div className="booking-form-container">
+    <div className={styles.bookingFormContainer}>
       <h2>Make New Booking</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Car Number: &nbsp;
-          <input type="text" value={carNumber} onChange={(e) => setCarNumber(e.target.value)} />
-        </label>
-        <label>
-          Car Model: &nbsp;
-          <input type="text" value={carModel} onChange={(e) => setCarModel(e.target.value)} />
-        </label>
-        
-        <label>
-          Address: &nbsp;
-          <input type="text" value={address} onChange={(e) => SetAddress(e.target.value)} />
-        </label>
-        <label>
+          <input placeholder='Car Number' type="text" value={carNumber} onChange={(e) => setCarNumber(e.target.value)} />
+          <input placeholder='Car Model' type="text" value={carModel} onChange={(e) => setCarModel(e.target.value)} />
+          <input placeholder='Address' type="text" value={address} onChange={(e) => SetAddress(e.target.value)} />
+          <label>
           Date of Pick-Up: &nbsp;
           <input type="date" value={dateOfPickUp} onChange={(e) => setDateOfPickUp(e.target.value)} />
         </label>

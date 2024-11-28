@@ -1,11 +1,15 @@
 // components/Footer.js
 import React from 'react';
-import './Footer.css';
+import styles from './Footer.module.css';
 const Footer = () => {
     return (
-        <footer className="footer">
-            <p>&copy; 2024 Car Wash App. All rights reserved.</p>
-            <p>Contact: info@carwashapp.com</p>
+        <footer className={styles.footer}>
+            <div>
+                <p>Contact: info@carwashapp.com</p>
+            </div>
+            <div>
+                <p>&copy; 2024 Car Wash App. All rights reserved.</p>
+            </div>
         </footer>
     );
 };

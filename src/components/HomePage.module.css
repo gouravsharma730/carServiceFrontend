@@ -1,7 +1,10 @@
-.main-container{
-    background: url('../carImage1.avif');
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 86vh;
     background-repeat: no-repeat;
-    color: white;
+    background-color: #dae3ec;
+    color: black;
     font-size: 20px;
     text-align: center;
 }
@@ -9,24 +12,29 @@
 .ServicesAndPrice{
     display:flex;
     padding:5px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+
 }
-.pricing-list{
+.pricingBox{
+  display: flex;
+  flex-direction: column;
+}
+.pricingList{
     list-style-type: none;
 }
 
-.BookingHistoryTable{
+.bookingTable{
     display:flex;
     flex-direction: column;
 }
 
-/* HomePage.css */
-.table-container {
+.tableContainer {
     margin-top: 20px;
   }
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  .bookingTable{
+    width:100%;
   }
   
   th, td {
@@ -58,7 +66,6 @@
     justify-content: space-around;
   }
 
-  /* Modal container */
 .modal {
   display: flex;
   justify-content: center;
@@ -72,8 +79,7 @@
   z-index: 9999; 
 }
 
-/* Modal content */
-.modal-content {
+.modalContent {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -81,20 +87,20 @@
   max-width: 400px;
   width: 100%;
   color: #0f0d0d;
+  position:relative;
 }
 
-/* Close button */
 .close {
-  position: absolute;
-  top: 2px;
-  right: 8px;
+  position:absolute;
+  top:0px;
+  right: 6px;;
+  /* position: inherit; */
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  color: #0f0d0d;
+  color: black;
 }
 
-/* Textarea for comment */
 textarea {
   width: 100%;
   min-height: 150px;
@@ -104,9 +110,8 @@ textarea {
   border-radius: 4px;
 }
 
-/* Send button */
 button {
-  background-color: #007bff; /* Blue color for send button */
+  background-color: #007bff;
   color: #fff;
   padding: 8px 16px;
   border: none;
@@ -114,16 +119,36 @@ button {
   cursor: pointer;
 }
 
-/* Button hover effect */
 button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 .star {
-  font-size: 24px;
   cursor: pointer;
 }
 
 .filled {
-  color: gold; /* Change to any color you prefer */
+  color: gold; 
+}
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+      background-size: cover;
+      background-color: #dae3ec;
+      color: black;
+  }
+  .tableContainer {
+    margin-top: 20px;
+    width: 100%;
+  }
+  th, td {
+    font-size:20px ;
+    padding: 3px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .modal-content {
+      max-width: 300px;
+  }
+
 }
