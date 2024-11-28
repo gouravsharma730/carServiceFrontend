@@ -1,6 +1,10 @@
 .mainContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 86vh;
     background-repeat: no-repeat;
-    color: white;
+    background-color: #dae3ec;
+    color: black;
     font-size: 20px;
     text-align: center;
 }

@@ -5,7 +5,8 @@
     justify-content:center;
     align-items: center;
     height: auto;
-    color: aqua;
+    background-color: #dae3ec;
+    color: black;
   }
 
   .formDiv {

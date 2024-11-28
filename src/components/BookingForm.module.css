@@ -4,7 +4,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: white;
+  background-color: #dae3ec;
+  color: black;;
 }
 
 .bookingFormContainer h2 {

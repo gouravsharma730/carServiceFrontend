@@ -15,7 +15,7 @@ function ForgetPassword() {
   async function handleSubmit(event) {
     event.preventDefault();
     try{
-        let response = await axios.post("https://car-service-backend-psi.vercel.app/forgetpassword",{email},{
+        let response = await axios.post(`${process.env.REACT_APP_BACKEND}/forgetpassword`,{email},{
           withCredentials: true
         });
         let token = response.data["token"];

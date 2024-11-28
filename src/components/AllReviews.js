@@ -11,7 +11,7 @@ const ReviewPage = () => {
 
   const getReviews = async () => {
     try {
-      const response = await axios.get('https://car-service-backend-psi.vercel.app/reviews');
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND}/reviews`);
       setReviews(response.data.message);
     } catch (error) {
       return(error);
@@ -19,7 +19,7 @@ const ReviewPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <h1 className={styles.reviewLine}>Reviews</h1>
       {reviews.map(review => (
         <div key={review._id} className={styles.reviewContainer}>
@@ -31,7 +31,6 @@ const ReviewPage = () => {
             <p>Created At: {new Date(review.createdAt).toLocaleString().slice(0,9)}</p>
           </div>
           <h2> By: {review.userName}</h2>
-          <hr />
         </div>
       ))}
     </div>

@@ -1,26 +1,35 @@
 body{
   background-repeat: no-repeat;
   background-position:0cqh;
-  background-color: black;
+  background-color: #dae3ec;
+  color: black;
+}
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  min-height: 86vh;
 }
 .reviewLine{
-  color: aqua;
+  background-color: #dae3ec;
+  color: black;
   text-align: center;
 }
+
 .reviewContainer {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 86vh; */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
 }
 
 .reviewContainer h2 {
-  color: aqua;
   margin-top: 0;
   font-size: 1.2rem;
 }
 
 .reviewContent {
-  color: aqua;
   margin-bottom: 10px;
 }
 
@@ -29,7 +38,6 @@ body{
 }
 
 .reviewStats {
-  color: aqua;
   margin-top: 10px;
 }
 

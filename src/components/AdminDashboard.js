@@ -10,8 +10,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const response = await axios.get('http://localhost:4000/adminHome');
-      const response = await axios.get('https://car-service-backend-psi.vercel.app/adminHome');
+      const response = await axios.get(process.env.backend);
       setPendingBookings(response.data.message.pendingBookings);
       setTotalBookings(response.data.message.totalBookings);
     };
@@ -19,7 +18,6 @@ const App = () => {
   }, []);
 
   const handleDropDateChange = (bookingId, dropDate) => {
-    // Update the local state with the new drop date
     const updatedBookings = pendingBookings.map(booking =>
       booking._id === bookingId ? { ...booking, dropDate } : booking
     );
@@ -27,9 +25,7 @@ const App = () => {
   };
 
   const handleResponseChange = async (bookingId, newStatus) => {
-    try {
-      // const response = await axios.post('http://localhost:4000/bookingresponse', {
-        const response = await axios.post('https://car-service-backend-psi.vercel.app/bookingresponse', {
+    try {const response = await axios.post(`${process.env.REACT_APP_BACKEND}/adminHome`, {
         bookingId,
         newStatus
       });

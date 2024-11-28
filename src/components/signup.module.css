@@ -5,7 +5,8 @@
     justify-content:center;
     align-items: center;
     height: auto;
-    color: aqua;
+    background-color: #dae3ec;
+    color: black;
     }
 
   .leftDiv {
@@ -13,6 +14,7 @@
       max-width: 100%;
       font-size: 30px;
       text-align: center;
+      
   }
 
   .rightDiv {
@@ -43,7 +45,8 @@
   justify-content:space-around;
   align-items: center;
   height: 87vh;
-  color: aqua;
+  background-color: #dae3ec;
+    color: black;
   }
  
 .leftDiv {
@@ -103,7 +106,8 @@ input{
   justify-content:space-around;
   align-items: center;
   height: 87vh;
-  color: aqua;
+  background-color: #dae3ec;
+    color: black;
   }
  
 .leftDiv {

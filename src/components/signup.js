@@ -26,8 +26,7 @@ function SignUp() {
       if (!formData.password.trim())
         return setErrorMessage("Please enter password");
       if (!formData.email.trim()) return setErrorMessage("Please enter email");
-      let response = await axios.post(
-        "https://car-service-backend-psi.vercel.app/signup",
+      let response = await axios.post(`${process.env.REACT_APP_BACKEND}/signup`,
         formData
       );
       let token = response.data["token"];
@@ -76,7 +75,7 @@ function SignUp() {
             />
           </div>
           <div className={styles.inputAndLabel}>
-            <div className={styles.passwordInput}>
+            {/* <div className={styles.passwordInput}> */}
               <input
                 type={showPassword ? "text" : "password"}
                 id="form2Example2"
@@ -86,7 +85,7 @@ function SignUp() {
                 onChange={handleInputChange}
                 placeholder="Password"
               />
-            </div>
+            {/* </div> */}
             <span
               onClick={() => setShowPassword(!showPassword)}
               style={{ cursor: "pointer" }}

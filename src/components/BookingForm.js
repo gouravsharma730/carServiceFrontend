@@ -25,7 +25,7 @@ const BookingForm = () => {
       dateOfPickUp,
     };
     bookingDetails.bookingTime = new Date().toLocaleDateString();
-    const sendData = await axios.post('https://car-service-backend-psi.vercel.app/newBooking',bookingDetails);
+    const sendData = await axios.post(`${process.env.REACT_APP_BACKEND}/newBooking`);
     if(sendData) {
     setTimeout(function(){
         navigate('/home');

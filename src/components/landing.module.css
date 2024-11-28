@@ -1,122 +1,18 @@
-@media only screen and (max-width: 600px) {
-    .mainContainer{
-        padding:10px;
-        font-size: 18px;
-        display:flex;
-        flex-direction:column;
-        text-align: center;
-        color: aqua;
-        font-size: 16px;
-    }
-    .textContainer{
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        text-align:center;
-        padding:25px;
-        margin:auto;
-    }
-
-    .textHeading{
-        font-size: 30px;
-    }
-    .textPoints{
-        margin-top: 30px;
-        font-size: 15px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .pointBox{
-        text-align: center;
-        border-style: solid ;
-        border-color: white;
-        border-width: .5px;
-        border-radius: 20px;
-        height: 150px;
-        width: 225px;
-        margin: 5px;
-        padding:2px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    .reviewItem{
-        height: 200px;
-        width: 200px;
-    }
-}
-
-
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-    .mainContainer{
-        padding:10px;
-        font-size: 18px;
-        display:flex;
-        flex-direction:column;
-        text-align: center;
-        color: aqua;
-        font-size: 20px;
-    }
-    .textContainer{
-        display:flex;
-        flex-direction:column;
-        text-align:center;
-        padding:25px;
-        margin:auto;
-    }
-    .textHeading{
-        font-size: 35px;
-    }
-    .textMain{
-        font-size: 20px;
-    }
-    .textPoints{
-        margin-top: 30px;
-        font-size: 15px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .pointBox{
-        border-style: solid ;
-    border-color: white;
-    border-width: .5px;
-    border-radius: 20px;
-        height: 150px;
-        width: 225px;
-        margin: 5px;
-        padding:2px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .reviewItem{
-        height: 250px;
-        width: 250px;
-    }
-    .pointBox:hover { 
-        transform: scale(1.1);
-        background-color: white;
-        color: black;
-     }
-}
-
 @media only screen and (min-width: 901px) {
 .mainContainer{
     display:flex;
     flex-direction:column;
+    min-height: 86vh;
     font-size: 20px;
     text-align: center;
-    color: aqua;
+    background-color: #dae3ec;
+    color: black;
 }
 
 .textContainer{
     display:flex;
     flex-direction:column;
-    text-align:center;
-    padding:25px;
-    margin:auto;
+    text-align:center; 
 }
 .textHeading{
     font-size: 45px;
@@ -180,4 +76,107 @@
     padding:5px;
 }
 
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .mainContainer{
+        padding:10px;
+        font-size: 18px;
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        color: aqua;
+        font-size: 20px;
+    }
+    .textContainer{
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+        padding:25px;
+        margin:auto;
+    }
+    .textHeading{
+        font-size: 35px;
+    }
+    .textMain{
+        font-size: 20px;
+    }
+    .textPoints{
+        margin-top: 30px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pointBox{
+        border-style: solid ;
+    border-color: white;
+    border-width: .5px;
+    border-radius: 20px;
+        height: 150px;
+        width: 225px;
+        margin: 5px;
+        padding:2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .reviewItem{
+        height: 250px;
+        width: 250px;
+    }
+    .pointBox:hover { 
+        transform: scale(1.1);
+        background-color: white;
+        color: black;
+     }
+}
+@media only screen and (max-width: 600px) {
+
+    .mainContainer{
+        color: #007BFF;
+        padding:10px;
+        font-size: 18px;
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        /* color:black; */
+        font-size: 16px;
+    }
+    .textContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        text-align:center;
+        padding:25px;
+        margin:auto;
+    }
+
+    .textHeading{
+        font-size: 30px;
+    }
+    .textPoints{
+        margin-top: 30px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pointBox{
+        text-align: center;
+        border-style: solid ;
+        border-color: white;
+        border-width: .5px;
+        border-radius: 20px;
+        height: 150px;
+        width: 225px;
+        margin: 5px;
+        padding:2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .reviewItem{
+        height: 200px;
+        width: 200px;
+    }
 }

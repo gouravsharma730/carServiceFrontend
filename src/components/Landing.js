@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from './landing.module.css';
+import styles from './Landing.module.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -12,8 +12,7 @@ const LandingPage = () => {
   },[]);
   const handleReview = async()=>{
     try{
-      // let response = await axios.get('http://localhost:4000/reviews');
-      let response = await axios.get('https://car-service-backend-psi.vercel.app/reviews');
+      let response = await axios.get(`${process.env.REACT_APP_BACKEND}/reviews`);
       SetReviews(response.data.message);
       return;
     }catch(err){
@@ -43,10 +42,7 @@ const LandingPage = () => {
         <div className={styles.textContainer}>
           <div className={styles.textHeading}>Welcome to SpeedyShine.</div> <br />
           <div className={styles.textMain}>
-            Your one-stop solution for all your car service needs! With
-            SpeedyShine, taking care of your vehicle has never been easier.
-            Whether it's a quick wash, a detailed interior cleaning, or a
-            full-service maintenance check, we've got you covered. <br/>
+            Your one-stop solution for all your car service needs.<br/>
             <div>
             Discover the ease and satisfaction of using SpeedyShine. Book now
             and experience the difference! <Link to="/signup"><button> Sign up</button></Link>
