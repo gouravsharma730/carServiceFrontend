@@ -67,6 +67,8 @@
     width: 100%;
     justify-content: center;
     padding: 20px;
+    background-color: #dae3ec;
+    color: black;
   }
   .formDiv {
     width: 50%;
@@ -120,6 +122,8 @@
     width: 100%;
     justify-content: center;
     padding: 20px;
+    background-color: #dae3ec;
+    color: black;
   }
   .formDiv {
     width: 35%;

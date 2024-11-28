@@ -134,6 +134,8 @@ button:hover {
 @media only screen and (max-width: 600px) {
   .main-container {
       background-size: cover;
+      background-color: #dae3ec;
+      color: black;
   }
   .tableContainer {
     margin-top: 20px;

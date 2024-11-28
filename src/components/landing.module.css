@@ -84,8 +84,9 @@
         display:flex;
         flex-direction:column;
         text-align: center;
-        color: aqua;
         font-size: 20px;
+        background-color: #dae3ec;
+        color: black;
     }
     .textContainer{
         display:flex;
@@ -134,7 +135,8 @@
 @media only screen and (max-width: 600px) {
 
     .mainContainer{
-        color: #007BFF;
+        background-color: #dae3ec;
+        color: black;
         padding:10px;
         font-size: 18px;
         display:flex;
