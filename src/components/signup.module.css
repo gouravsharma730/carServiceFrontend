@@ -1,3 +1,139 @@
+@media only screen and (min-width: 901px) {
+
+.container{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: 87vh;
+  background-color: white;
+  color: black;
+  background-image: url('../car_no_color.gif');
+  background-size: 100px 100px ;
+  background-repeat: no-repeat; 
+  background-position: 98% 90%;
+  background-attachment: fixed;
+  }
+ 
+.leftDiv {
+  display: flex;
+  align-content: flex-start;
+  max-width: 25%;
+  min-height: 60%;
+  font-size:xx-large;
+  font-size: 40px;
+}
+  
+.rightDiv {
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+  }
+  form{
+    display: flex;
+    width:100%
+  }
+input{
+  width:100%;
+}
+.passwordInput{
+  width:100%;
+}
+.inputAndLabel{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.inputSubmit{ 
+  max-width: 98%;
+  justify-content: center;
+  display: flex;
+}
+.btn{
+  width: 95%;
+}
+.sendToLogin{
+  text-align: center;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+}
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .leftDiv {
+      max-width: 40%;
+  }
+  
+.container{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: 87vh;
+  background-color: white;
+  color: black;
+  background-image: url('../car_no_color.gif');
+  background-size: 100px 100px ;
+  background-repeat: no-repeat; 
+  background-position: 98% 90%;
+  background-attachment: fixed;
+  }
+ 
+.leftDiv {
+  display: flex;
+  align-content: flex-start;
+  max-width: 25%;
+  min-height: 60%;
+  font-size:xx-large;
+  font-size: 40px;
+}
+  
+.rightDiv {
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+  }
+  form{
+    display: flex;
+    width:100%
+  }
+input{
+  width:100%;
+}
+.passwordInput{
+  width:100%;
+}
+.inputAndLabel{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.inputSubmit{ 
+  max-width: 98%;
+  justify-content: center;
+  display: flex;
+}
+.btn{
+  width: 95%;
+}
+.sendToLogin{
+  text-align: center;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+}
+
+}
+
+
 @media only screen and (max-width: 600px) {
   .container{
     display: flex;
@@ -5,8 +141,13 @@
     justify-content:center;
     align-items: center;
     height: auto;
-    background-color: #dae3ec;
+    background-color: white;
     color: black;
+    background-image: url('../car_no_color.gif');
+    background-size: 100px 100px ;
+    background-repeat: no-repeat; 
+    background-position: 98% 90%;
+    background-attachment: fixed;
     }
 
   .leftDiv {
@@ -30,131 +171,4 @@
   .btn {
       width: 100%; 
   }
-}
-
-
-
-
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  .leftDiv {
-      max-width: 40%;
-  }
-  
-.container{
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  height: 87vh;
-  background-color: #dae3ec;
-  color: black;
-  }
- 
-.leftDiv {
-  display: flex;
-  align-content: flex-start;
-  max-width: 25%;
-  min-height: 60%;
-  font-size:xx-large;
-  font-size: 40px;
-}
-  
-.rightDiv {
-    max-width: 350px;
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-  }
-  form{
-    display: flex;
-    width:100%
-  }
-input{
-  width:100%;
-}
-.passwordInput{
-  width:100%;
-}
-.inputAndLabel{
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  width: 100%;
-}
-
-.inputSubmit{ 
-  max-width: 98%;
-  justify-content: center;
-  display: flex;
-}
-.btn{
-  width: 95%;
-}
-.sendToLogin{
-  text-align: center;
-  width:100%;
-  display: flex;
-  justify-content:space-between;
-  align-items: baseline;
-}
-
-}
-
-@media only screen and (min-width: 901px) {
-
-.container{
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  height: 87vh;
-  background-color: #dae3ec;
-  color: black;
-  }
- 
-.leftDiv {
-  display: flex;
-  align-content: flex-start;
-  max-width: 25%;
-  min-height: 60%;
-  font-size:xx-large;
-  font-size: 40px;
-}
-  
-.rightDiv {
-    max-width: 350px;
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-  }
-  form{
-    display: flex;
-    width:100%
-  }
-input{
-  width:100%;
-}
-.passwordInput{
-  width:100%;
-}
-.inputAndLabel{
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  width: 100%;
-}
-
-.inputSubmit{ 
-  max-width: 98%;
-  justify-content: center;
-  display: flex;
-}
-.btn{
-  width: 95%;
-}
-.sendToLogin{
-  text-align: center;
-  width:100%;
-  display: flex;
-  justify-content:space-between;
-  align-items: baseline;
-}
 }

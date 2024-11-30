@@ -1,3 +1,122 @@
+@media only screen and (min-width: 901px) {
+  body {
+    color: white;
+  }
+  .centered {
+    height: 87vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    background-image: url('../car_no_color.gif');
+    background-size: 100px 100px ;
+    background-repeat: no-repeat; 
+    background-position: 98% 90%;
+    background-attachment: fixed;
+  }
+  .formDiv {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .formCheck {
+    display: flex;
+    gap: 10px;
+  }
+  .passwordInput {
+    display: flex;
+    align-items: center;
+  }
+  .inputHolder {
+    width: 100%;
+  }
+
+  .row {
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .formOutline {
+    margin: 5px;
+  }
+
+  .textCenter {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .formDiv {
+    width: 50%;
+  }
+
+  body {
+    color: white;
+  }
+  .centered {
+    height: 87vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    background-image: url('../car_no_color.gif');
+    background-size: 100px 100px ;
+    background-repeat: no-repeat; 
+    background-position: 98% 90%;
+    background-attachment: fixed;
+  }
+  .formDiv {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .formCheck {
+    display: flex;
+    gap: 20px;
+  }
+  .formOutline {
+    margin: 5px;
+  }
+  .passwordInput {
+    display: flex;
+    align-items: center;
+  }
+  .inputHolder {
+    width: 100%;
+  }
+
+  .row {
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btn {
+      width: 100%;
+    }
+    
+    .textCenter {
+        display: flex;
+        justify-content: center;
+    }
+    .formOutline {
+        margin: 5px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
   .centered {
     display: flex;
@@ -5,8 +124,13 @@
     justify-content:center;
     align-items: center;
     height: auto;
-    background-color: #dae3ec;
+    background-color: white;
     color: black;
+    background-image: url('../car_no_color.gif');
+    background-size: 100px 100px ;
+    background-repeat: no-repeat; 
+    background-position: 98% 90%;
+    background-attachment: fixed;
   }
 
   .formDiv {
@@ -51,112 +175,4 @@
     .formOutline {
         margin: 5px;
     }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  .formDiv {
-    width: 50%;
-  }
-
-  body {
-    color: aqua;
-  }
-  .centered {
-    height: 87vh;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding: 20px;
-    background-color: #dae3ec;
-    color: black;
-  }
-  .formDiv {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .formCheck {
-    display: flex;
-    gap: 20px;
-  }
-  .formOutline {
-    margin: 5px;
-  }
-  .passwordInput {
-    display: flex;
-    align-items: center;
-  }
-  .inputHolder {
-    width: 100%;
-  }
-
-  .row {
-    height: min-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .btn {
-      width: 100%;
-    }
-    
-    .textCenter {
-        display: flex;
-        justify-content: center;
-    }
-    .formOutline {
-        margin: 5px;
-    }
-}
-
-@media only screen and (min-width: 901px) {
-  body {
-    color: aqua;
-  }
-  .centered {
-    height: 87vh;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding: 20px;
-    background-color: #dae3ec;
-    color: black;
-  }
-  .formDiv {
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .formCheck {
-    display: flex;
-    gap: 10px;
-  }
-  .passwordInput {
-    display: flex;
-    align-items: center;
-  }
-  .inputHolder {
-    width: 100%;
-  }
-
-  .row {
-    height: min-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .formOutline {
-    margin: 5px;
-  }
-
-  .textCenter {
-    display: flex;
-    justify-content: center;
-  }
 }

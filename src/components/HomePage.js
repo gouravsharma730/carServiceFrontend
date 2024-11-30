@@ -33,11 +33,8 @@ function App() {
     const userName = userProfile[0]["userName"];
     return (
       <div>
-        <br />
         <h2>
-          Hi {userName}, Welcome
-          <br />
-          <br /> Our services package
+          Hi {userName}
         </h2>
         <div></div>
       </div>

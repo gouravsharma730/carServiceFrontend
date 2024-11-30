@@ -1,11 +1,19 @@
+body{
+  background-image: url('../car_no_color.gif');
+  background-size: 100px 100px ;
+  background-repeat: no-repeat; 
+  background-position: 98% 88%;
+  background-attachment: fixed;
+}
 .bookingFormContainer {
   max-width: 400px;
+  min-height: 85.5vh;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #dae3ec;
-  color: black;;
+  background-color: white;
+  color: black;
 }
 
 .bookingFormContainer h2 {

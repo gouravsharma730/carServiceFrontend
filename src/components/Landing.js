@@ -46,8 +46,8 @@ const LandingPage = () => {
             <div>
             Discover the ease and satisfaction of using SpeedyShine. Book now
             and experience the difference! <Link to="/signup"><button> Sign up</button></Link>
-            </div> <br/>Why choose
-            us?
+            </div> <br/>    
+            
           </div>
           
           <div className={styles.textPoints}>
@@ -78,8 +78,8 @@ const LandingPage = () => {
         <div className={styles.reviewContainer}>
             <div className={styles.reviewHeading}><strong>Reviews</strong></div>
             <div className={styles.reviews}>{renderRandomReview()}</div>
-            <div className ={styles.moreReviews}><Link to="/reviews"><button>See more reviews</button></Link> </div>
         </div>
+            <div className ={styles.moreReviews}><Link to="/reviews"><button>See more reviews</button></Link> </div>
       </div>
     </>
   );

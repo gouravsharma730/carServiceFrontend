@@ -1,16 +1,21 @@
 body{
   background-repeat: no-repeat;
   background-position:0cqh;
-  background-color: #dae3ec;
+  background-color: white;
   color: black;
 }
 .mainContainer{
   display: flex;
   flex-direction: column;
   min-height: 86vh;
+  background-image: url('../car_no_color.gif');
+    background-size: 100px 100px ;
+    background-repeat: no-repeat; 
+    background-position: 98% 90%;
+    background-attachment: fixed;
 }
 .reviewLine{
-  background-color: #dae3ec;
+  background-color: white;
   color: black;
   text-align: center;
 }
@@ -18,7 +23,6 @@ body{
 .reviewContainer {
   display: flex;
   flex-direction: column;
-  /* min-height: 86vh; */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
