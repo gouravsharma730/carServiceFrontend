@@ -83,7 +83,7 @@ const LandingPage = () => {
         <h2 className={styles.sectionTitle}>Customer Reviews</h2>
         <div className={styles.reviewsGrid}>{renderRandomReview()}</div>
         <Link to="/reviews" className={styles.moreReviewsButton}>
-          See More Reviews
+          See More REVIEWS
         </Link>
       </div>
     </div>
