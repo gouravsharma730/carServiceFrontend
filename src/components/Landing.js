@@ -3,90 +3,91 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import styles from './Landing.module.css';
 
-
 const LandingPage = () => {
-  let [reviews,SetReviews] = useState([]);
-  useEffect(()=>{
+  let [reviews, SetReviews] = useState([]);
+
+  useEffect(() => {
     handleReview();
-    renderRandomReview();
-  },[]);
-  const handleReview = async()=>{
-    try{
+  }, []);
+
+  const handleReview = async () => {
+    try {
       let response = await axios.get(`${process.env.REACT_APP_BACKEND}/reviews`);
       SetReviews(response.data.message);
-      return;
-    }catch(err){
-      return console.log(err);
+    } catch (err) {
+      console.log(err);
     }
+  };
+
+  function selectRandomReviews() {
+    const shuffleReviews = reviews.sort(() => 0.5 - Math.random());
+    return shuffleReviews.slice(0, 4);
   }
-  function selectRandomReviews(){
-    const shuffleReviews = reviews.sort(()=>0.5-Math.random());
-    return shuffleReviews.slice(0,4);
-  }
-  function renderRandomReview(){
+
+  function renderRandomReview() {
     const randomReview = selectRandomReviews();
-    return randomReview.map((review,index)=>(
+    return randomReview.map((review, index) => (
       <div key={index} className={styles.reviewItem}>
-      <div>
-        <br/>{review.content}
-      </div>
-      <div>
-        <br/><strong>{review.userName}</strong>
-        </div>
+        <p className={styles.reviewText}>“{review.content}”</p>
+        <div className={styles.reviewAuthor}>- {review.userName}</div>
       </div>
     ));
   }
+
   return (
-    <>
-      <div className={styles.mainContainer}>
-        <div className={styles.textContainer}>
-          <div className={styles.textHeading}>Welcome to SpeedyShine.</div> <br />
-          <div className={styles.textMain}>
-            Your one-stop solution for all your car service needs.<br/>
-            <div>
-            Discover the ease and satisfaction of using SpeedyShine. Book now
-            and experience the difference! <Link to="/signup"><button> Sign up</button></Link>
-            </div> <br/>    
-            
-          </div>
-          
-          <div className={styles.textPoints}>
-            <br />
-            <div className={styles.pointBox}>
-              <div className={styles.points}><strong><br />Convenience:</strong><br /></div> <div>Book your service anytime, anywhere,
-              right from your smartphone.</div>
-            </div>
-            <div className={styles.pointBox}>
-            <div className={styles.points}><strong><br />Quality:</strong></div><div>Our team of experienced professionals
-              ensures top-notch service every time.</div>
-            </div>
-            <div className={styles.pointBox}>
-            <div className={styles.points}><strong><br />Reliability:</strong><br /></div> <div>Trust in our commitment to
-              punctuality and efficiency.</div>
-            </div>
-            <div className={styles.pointBox}>
-            <div className={styles.points}><strong><br />Customization:</strong><br /></div> <div>Tailor services to fit your
-              schedule and budget.</div>
-            </div>
-            <div className={styles.pointBox}>
-            <br /><strong>Safety:<br /> </strong> We prioritize the safety and well-being
-              of your vehicle.
-            </div>{" "}
-          </div>
-            
+    <div className={styles.mainContainer}>
+      {/* Hero Section */}
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heading}>Welcome to <span>SpeedyShine</span></h1>
+          <p className={styles.subHeading}>
+            Your one-stop solution for all your car service needs.
+          </p>
+          <p className={styles.description}>
+            Discover the ease and satisfaction of using SpeedyShine. Book now and experience the difference!
+          </p>
+          <Link to="/signup" className={styles.ctaButton}>Sign Up</Link>
         </div>
-        <div className={styles.reviewContainer}>
-            <div className={styles.reviewHeading}><strong>Reviews</strong></div>
-            <div className={styles.reviews}>{renderRandomReview()}</div>
-        </div>
-            <div className ={styles.moreReviews}><Link to="/reviews"><button>See more reviews</button></Link> </div>
+        <div className={styles.heroImage}></div>
       </div>
-    </>
+
+      {/* Key Features Section */}
+      <div className={styles.featuresSection}>
+        <h2 className={styles.sectionTitle}>Why Choose Us?</h2>
+        <div className={styles.featuresGrid}>
+          <div className={styles.featureItem}>
+            <strong>🚀 Convenience</strong>
+            <p>Book your service anytime, anywhere, right from your smartphone.</p>
+          </div>
+          <div className={styles.featureItem}>
+            <strong>💎 Quality</strong>
+            <p>Our team of experienced professionals ensures top-notch service every time.</p>
+          </div>
+          <div className={styles.featureItem}>
+            <strong>⚡ Reliability</strong>
+            <p>Trust in our commitment to punctuality and efficiency.</p>
+          </div>
+          <div className={styles.featureItem}>
+            <strong>🎯 Customization</strong>
+            <p>Tailor services to fit your schedule and budget.</p>
+          </div>
+          <div className={styles.featureItem}>
+            <strong>🛡️ Safety</strong>
+            <p>We prioritize the safety and well-being of your vehicle.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Reviews Section */}
+      <div className={styles.reviewsSection}>
+        <h2 className={styles.sectionTitle}>Customer Reviews</h2>
+        <div className={styles.reviewsGrid}>{renderRandomReview()}</div>
+        <Link to="/reviews" className={styles.moreReviewsButton}>
+          See More Reviews
+        </Link>
+      </div>
+    </div>
   );
 };
 
 export default LandingPage;
-
-
-
-

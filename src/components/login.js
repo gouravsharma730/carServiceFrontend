@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +11,7 @@ function Login() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     SetFormData({ ...formData, [name]: value });
@@ -22,11 +22,12 @@ function Login() {
     if (!formData.password.trim())
       return setErrorMessage("Please enter password");
     if (!formData.email.trim()) return setErrorMessage("Please enter email");
+
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND}/login`,formData,
-        {
-          withCredentials: true,
-        }
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND}/login`,
+        formData,
+        { withCredentials: true }
       );
       let token = response.data["token"];
       localStorage.setItem("jwtToken", token);
@@ -40,77 +41,63 @@ function Login() {
         else window.location.href = "/home";
       }
     } catch (err) {
-      return console.log(err);
+      console.log(err);
     }
   };
 
   return (
-    <div className={styles.centered}>
-      <div className={styles.formDiv}>
+    <div className={styles.container}>
+      <div className={styles.rightDiv}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.formOutline}>
+          <div className={styles.inputAndLabel}>
             <input
               placeholder="Email address"
               type="email"
-              id="form2Example1"
-              className={styles.inputHolder}
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              className={styles.userInput}
             />
           </div>
-          <div className={styles.formOutline}>
-            <div className={styles.passwordInput}>
-              <input
-                placeholder="Password"
-                type={showPassword ? "text" : "password"}
-                id="form2Example2"
-                className={styles.inputHolder}
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-              /> &nbsp; 
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                style={{ cursor: "pointer" }}
-              >
-                <FontAwesomeIcon
-                  icon={showPassword ? faEye : faEyeSlash}
-                  size="lg"
-                />
-              </span>
-            </div>
+          <div className={styles.inputAndLabel}>
+            <input
+              placeholder="Password"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className={styles.userInput}
+            />
+            <span
+              className={styles.eyeIcon}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+            </span>
           </div>
-          {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+          {errorMessage && <p className={styles.error}>{errorMessage}</p>}
           <div className={styles.row}>
             <div className={styles.formCheck}>
-              <label className={styles.formCheck} htmlFor="form2Example31">
-                {" "}
-                Remember&nbsp;me
-              </label>
               <input
                 type="checkbox"
-                value=""
-                id="form2Example31"
+                id="rememberMe"
                 defaultChecked
+                className={styles.checkbox}
               />
+              <label htmlFor="rememberMe" >Remember me</label>
             </div>
-
-            <div className={"styles.col"}>
-              <a href="/ForgetPassword">Forgot password?</a>
-            </div>
+            <a href="/ForgetPassword" className={styles.forgotPassword}>
+              Forgot password?
+            </a>
           </div>
           <button type="submit" className={styles.btn}>
             Sign in
           </button>
-          <div className={styles.textCenter}>
-            <p>
-              Not a member?{" "}
-              <button type="button" className={styles.btn}>
-                {" "}
-                <a href="/signup">Register</a>
-              </button>
-            </p>
+          <div className={styles.sendToLogin}>
+            Not a member?{" "}
+            <a href="/signup" className={styles.loginLink}>
+              Register
+            </a>
           </div>
         </form>
       </div>

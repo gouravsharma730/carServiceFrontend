@@ -1,140 +1,280 @@
-
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 86vh;
-    background-repeat: no-repeat;
-    background-color: white;
-    color: black;
-    font-size: 20px;
-    text-align: center;
-    background-image: url('../car_no_color.gif');
-    background-size: 100px 100px ;
-    background-repeat: no-repeat; 
-    background-position: 98% 90%;
-    background-attachment: fixed;
-}
-
-.ServicesAndPrice{
-    display:flex;
-    padding:5px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.pricingBox{
+.mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  gap: 30px;
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
 }
-.pricingList{
-    list-style-type: none;
+
+.userProfile {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.ServicesAndPrice {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.bookingTable{
+.pricingBox {
+  /* background: linear-gradient(to bottom right, #1e3c72, #2a5298); */
+  background: #2a5298;
+
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingBox:hover {
+  transform: translateY(-25px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom right, #2a5298, #1e3c72);
+}
+
+.pricingBox h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #ffcc00;
+  text-transform: uppercase;
+}
+
+.pricingBox h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #00e676;
+}
+
+.pricingList {
+  list-style: none;
+  padding: 0;
+}
+
+.pricingList li {
+  font-size: 16px;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricingList li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .ServicesAndPrice {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricingBox {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #1e3c72;
+  display: inline-block;
+  color: #1e3c72;
+}
+
+.tableContainer{
+  width: 100%;
   display:flex;
   flex-direction: column;
+  gap:20px;
+}
+.bookingHistory {
+  margin-top: 30px;
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
-.tableContainer {
+.bookingHistory h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.bookingTable {
+  width: 100%;
+  border-collapse: collapse;
+  /* background-color: #1e3c72; */
+}
+
+.bookingTable th,
+.bookingTable td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bookingTable th {
+  background-color: #2a5298;
+  color: #00e676;
+  font-weight: 600;
+}
+
+.bookingTable tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bookingActions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
   margin-top: 20px;
 }
 
-.bookingTable{
-  width:100%;
+.makeBooking,
+.postReview {
+  background: #00e676;
+  color: #1e3c72;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
-th, td {
+.makeBooking:hover,
+.postReview:hover {
+  background: #00c853;
+}
+
+@media (max-width: 768px) {
+  .bookingTable th,
+  .bookingTable td {
+    font-size: 14px;
     padding: 10px;
-    text-align: left;
   }
 
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #0f0d0d;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  .makeBooking,
+  .postReview {
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  .bookingAndReview{
-    display: flex;
-    justify-content: space-around;
-  }
+}
+
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.primaryButton {
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.primaryButton:hover {
+  background-color: #1e3c72;
+}
+
+.reviewButton {
+  background-color: #4caf50;
+  border-radius: 10%;
+}
+
+.reviewButton:hover {
+  background-color: #45a049;
+}
 
 .modal {
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 9999; 
 }
 
 .modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 100%;
-  color: #0f0d0d;
-  position:relative;
+  border-radius: 12px;
+  color: #00c853;
+  width: 700px;
+  min-height: 400px;
 }
 
 .close {
-  position:absolute;
-  top:0px;
-  right: 6px;;
-  /* position: inherit; */
-  cursor: pointer;
-  font-size: 30px;
-  font-weight: bold;
   color: black;
-}
-
-textarea {
-  width: 100%;
-  min-height: 150px;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #007bff;
-  color: white ;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+  position: absolute;
+  left:73%;
+  top:100px;
+  font-size: 40px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
+@media (max-width: 500px) {
+  .close {
+  color: black;
+  position: absolute;
+  left:90%;
+  top:100px;
+  font-size: 40px;
+  cursor: pointer;
+}}
+
+.starContainer {
+  margin: 10px 0;
 }
 
 .star {
+  font-size: 28px;
+  color: #00c853;
   cursor: pointer;
 }
 
-.filled {
-  color: gold; 
+.filledStar {
+  color: gold;
+}
+
+.errorMessage {
+  color: red;
+  margin-top: 5px;
 }

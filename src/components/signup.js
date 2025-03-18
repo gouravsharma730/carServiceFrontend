@@ -4,31 +4,38 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 function SignUp() {
   let navigate = useNavigate();
-  let [formData, SetformData] = useState({
+  let [formData, setFormData] = useState({
     email: "",
     password: "",
     userName: "",
   });
   let [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   useEffect(() => {
     handleInputChange({});
   }, []);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target || {};
-    SetformData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value });
   };
+
   async function handleSignUpSubmit(event) {
     event.preventDefault();
     try {
       if (!formData.password.trim())
         return setErrorMessage("Please enter password");
       if (!formData.email.trim()) return setErrorMessage("Please enter email");
-      let response = await axios.post(`${process.env.REACT_APP_BACKEND}/signup`,
+
+      let response = await axios.post(
+        `${process.env.REACT_APP_BACKEND}/signup`,
         formData
       );
+
       let token = response.data["token"];
       localStorage.setItem("jwtToken", token);
       return navigate("/login");
@@ -47,8 +54,7 @@ function SignUp() {
     <div className={styles.container}>
       <div className={styles.leftDiv}>
         <div className={styles.textDiv}>
-          Rev up your ride with SpeedyShine where every car gets a VIP
-          treatment!
+          Rev up your ride with <span>SpeedyShine</span> — where every car gets VIP treatment!
         </div>
         <hr className={styles.line} />
       </div>
@@ -62,6 +68,7 @@ function SignUp() {
               value={formData.userName}
               onChange={handleInputChange}
               placeholder="Username"
+              required
             />
           </div>
           <div className={styles.inputAndLabel}>
@@ -72,23 +79,22 @@ function SignUp() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
+              required
             />
           </div>
           <div className={styles.inputAndLabel}>
-            {/* <div className={styles.passwordInput}> */}
-              <input
-                type={showPassword ? "text" : "password"}
-                id="form2Example2"
-                className={styles.form}
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                placeholder="Password"
-              />
-            {/* </div> */}
+            <input
+              type={showPassword ? "text" : "password"}
+              className={styles.userInput}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              placeholder="Password"
+              required
+            />
             <span
+              className={styles.eyeIcon}
               onClick={() => setShowPassword(!showPassword)}
-              style={{ cursor: "pointer" }}
             >
               <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
             </span>
@@ -99,12 +105,9 @@ function SignUp() {
               Sign Up
             </button>
           </div>
-          <br/>
           <div className={styles.sendToLogin}>
-            <h6>Already have an account?</h6>
-            <button>
-              <a href="/login">Login</a>
-            </button>
+            <span>Already have an account?</span>
+            <a href="/login" className={styles.loginLink}>Login</a>
           </div>
         </form>
       </div>

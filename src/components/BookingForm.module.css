@@ -1,23 +1,24 @@
-body{
-  background-image: url('../car_no_color.gif');
-  background-size: 100px 100px ;
-  background-repeat: no-repeat; 
-  background-position: 98% 88%;
-  background-attachment: fixed;
+body {
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
+
 .bookingFormContainer {
-  max-width: 400px;
-  min-height: 85.5vh;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  color: black;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #162447, #1f4068);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 
 .bookingFormContainer h2 {
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #ffcc00;
+  text-align: center;
 }
 
 .bookingFormContainer form {
@@ -25,50 +26,79 @@ body{
   flex-direction: column;
 }
 
-.bookingFormContainer label {
-  margin-bottom: 10px;
+.bookingFormContainer input,
+.bookingFormContainer select {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #1f4068;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.bookingFormContainer input[type='text'],
-.bookingFormContainer input[type='date'] {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+.bookingFormContainer input::placeholder,
+.bookingFormContainer select::placeholder {
+  color: #ccc;
+}
+
+.bookingFormContainer input:focus,
+.bookingFormContainer select:focus {
+  border-color: #00e676;
+}
+
+.bookingFormContainer label {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #ffcc00;
+}
+
+.bookingFormContainer select {
+  appearance: none;
 }
 
 .bookingFormContainer button {
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #007bff;
-  color: white;
+  padding: 12px;
+  background: #00e676;
+  color: #1e3c72;
   border: none;
-  border-radius: 3px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
 }
 
 .bookingFormContainer button:hover {
-  background-color: #0056b3;
+  background: #00c853;
 }
 
-
-/* Add these styles to your BookingForm.css file */
-
-.bookingFormContainer select {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 100%;
+/* Hover effect for form fields */
+.bookingFormContainer input:hover,
+.bookingFormContainer select:hover {
+  border-color: #00e676;
 }
 
-/* Style the dropdown arrow */
-.bookingFormContainer select::-ms-expand {
-  display: none;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bookingFormContainer {
+    padding: 20px;
+  }
 
-.bookingFormContainer select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  .bookingFormContainer h2 {
+    font-size: 24px;
+  }
+
+  .bookingFormContainer input,
+  .bookingFormContainer select {
+    font-size: 14px;
+  }
+
+  .bookingFormContainer button {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

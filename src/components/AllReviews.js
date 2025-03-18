@@ -14,25 +14,39 @@ const ReviewPage = () => {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND}/reviews`);
       setReviews(response.data.message);
     } catch (error) {
-      return(error);
+      console.error("Error fetching reviews:", error);
     }
   };
 
   return (
     <div className={styles.mainContainer}>
-      <h1 className={styles.reviewLine}>Reviews</h1>
-      {reviews.map(review => (
-        <div key={review._id} className={styles.reviewContainer}>
-          <div className={styles.reviewContent}>
-            <p>{review.content}</p>
-            <p className={styles.reviewRating}>Rating: {review.rating}</p>
-          </div>
-          <div className={styles.reviewStats}>
-            <p>Created At: {new Date(review.createdAt).toLocaleString().slice(0,9)}</p>
-          </div>
-          <h2> By: {review.userName}</h2>
-        </div>
-      ))}
+      <h1 className={styles.reviewLine}>Customer Reviews</h1>
+      <div className={styles.reviewList}>
+        {reviews.length > 0 ? (
+          reviews.map(review => (
+            <div key={review._id} className={styles.reviewCard}>
+              <div className={styles.reviewHeader}>
+                <h2 className={styles.userName}>{review.userName}</h2>
+                <span className={styles.rating}>
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <span key={i} className={i < review.rating ? styles.filledStar : styles.emptyStar}>
+                      &#9733;
+                    </span>
+                  ))}
+                </span>
+              </div>
+              <p className={styles.comment}>{review.content}</p>
+              <div className={styles.footer}>
+                <span className={styles.date}>
+                  {new Date(review.createdAt).toLocaleString().slice(0, 10)}
+                </span>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className={styles.noReviews}>No reviews available yet.</p>
+        )}
+      </div>
     </div>
   );
 };
