@@ -125,36 +125,36 @@ function App() {
     <div className={styles.mainContainer}>
       {displayUserProfile()}
       <div className={styles.ServicesAndPrice}>
-  <div className={styles.pricingBox}>
-    <h3>Basic Wash Package</h3>
-    <h2>$20</h2>
-    <ul className={styles.pricingList}>
-      <li>🚗 Exterior hand wash</li>
-      <li>🛞 Wheel cleaning</li>
-      <li>🧹 Interior vacuuming</li>
-      <li>🪟 Windows cleaned inside and out</li>
-    </ul>
-  </div>
-  <div className={styles.pricingBox}>
-    <h3>Standard Wash Package</h3>
-    <h2>$30</h2>
-    <ul className={styles.pricingList}>
-      <li>✔️ Includes all services in the Basic Wash Package</li>
-      <li>✨ Application of high-quality wax</li>
-      <li>🧽 Interior wipe down and dashboard cleaning</li>
-    </ul>
-  </div>
-  <div className={styles.pricingBox}>
-    <h3>Deluxe Wash Package</h3>
-    <h2>$40</h2>
-    <ul className={styles.pricingList}>
-      <li>✔️ Includes all services in the Standard Wash Package</li>
-      <li>🧴 Deep cleaning of interior surfaces</li>
-      <li>🛡️ Application of protectant to interior surfaces</li>
-      <li>🍃 Air freshener</li>
-    </ul>
-  </div>
-</div>
+        <div className={styles.pricingBox}>
+          <h3>Basic Wash Package</h3>
+          <h2>$20</h2>
+          <ul className={styles.pricingList}>
+            <li>🚗 Exterior hand wash</li>
+            <li>🛞 Wheel cleaning</li>
+            <li>🧹 Interior vacuuming</li>
+            <li>🪟 Windows cleaned inside and out</li>
+          </ul>
+        </div>
+        <div className={styles.pricingBox}>
+          <h3>Standard Wash Package</h3>
+          <h2>$30</h2>
+          <ul className={styles.pricingList}>
+            <li>✔️ Includes all services in the Basic Wash Package</li>
+            <li>✨ Application of high-quality wax</li>
+            <li>🧽 Interior wipe down and dashboard cleaning</li>
+          </ul>
+        </div>
+        <div className={styles.pricingBox}>
+          <h3>Deluxe Wash Package</h3>
+          <h2>$40</h2>
+          <ul className={styles.pricingList}>
+            <li>✔️ Includes all services in the Standard Wash Package</li>
+            <li>🧴 Deep cleaning of interior surfaces</li>
+            <li>🛡️ Application of protectant to interior surfaces</li>
+            <li>🍃 Air freshener</li>
+          </ul>
+        </div>
+      </div>
 
       {displayBookingHistory()}
 

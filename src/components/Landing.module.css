@@ -94,6 +94,78 @@
     transform: translateY(-5px);
     background-color:#acc0d4;
   }
+
+
+  .ServicesAndPrice {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .pricingBox {
+    /* background: linear-gradient(to bottom right, #1e3c72, #2a5298); */
+    background: #2a5298;
+  
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pricingBox:hover {
+    transform: translateY(-25px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom right, #2a5298, #1e3c72);
+  }
+  
+  .pricingBox h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ffcc00;
+    text-transform: uppercase;
+  }
+  
+  .pricingBox h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #00e676;
+  }
+  
+  .pricingList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pricingList li {
+    font-size: 16px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .pricingList li:last-child {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 768px) {
+    .ServicesAndPrice {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pricingBox {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
   
   /* Reviews Section */
   .reviewsSection {
